@@ -253,6 +253,34 @@ const HowWeWork: React.FC = () => {
         </div>
       </section>
 
+      {/* Mid-page CTA — after guarantees, before FAQ */}
+      <section className="py-14 bg-white border-y border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-brand-900 rounded-2xl px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-white">
+            <div>
+              <p className="font-black text-xl mb-1">Convinced? Let's start your project.</p>
+              <p className="text-white/50 text-sm">Free 30-min discovery call. No commitment required.</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <a
+                href="https://wa.me/919589781311?text=Hi%20ZetaX%2C%20I%27d%20like%20to%20start%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 border border-white/20 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors"
+              >
+                WhatsApp Us
+              </a>
+              <Link
+                to="/contact"
+                className="bg-brand-accent text-brand-900 text-sm font-bold px-5 py-3 rounded-xl hover:bg-white transition-colors flex items-center gap-2"
+              >
+                Book a Demo <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

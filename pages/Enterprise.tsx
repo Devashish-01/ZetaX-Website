@@ -189,6 +189,34 @@ const Enterprise: React.FC = () => {
         </div>
       </section>
 
+      {/* Mid-page CTA */}
+      <section className="py-12 bg-white border-y border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-brand-accent rounded-2xl px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="font-black text-xl text-brand-900 mb-1">Ready to discuss your project?</p>
+              <p className="text-brand-900/60 text-sm">We scope enterprise projects within 48 hours.</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <a
+                href="https://wa.me/919589781311?text=Hi%20ZetaX%2C%20I%27d%20like%20to%20discuss%20an%20enterprise%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-900/10 border border-brand-900/20 text-brand-900 text-sm font-semibold px-5 py-3 rounded-xl hover:bg-brand-900/20 transition-colors"
+              >
+                WhatsApp Us
+              </a>
+              <Link
+                to="/contact"
+                className="bg-brand-900 text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-gray-800 transition-colors flex items-center gap-2"
+              >
+                Schedule Consultation <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Engagement Models */}
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

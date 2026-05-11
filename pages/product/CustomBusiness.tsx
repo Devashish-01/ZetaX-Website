@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, ClipboardList, Cpu, Plug, Headphones, BarChart2, ArrowRight, Check, Users, Layers } from 'lucide-react';
+import StickyDemoCTA from '../../components/StickyDemoCTA';
 
 const features = [
   {
@@ -282,6 +283,7 @@ const CustomBusiness: React.FC = () => {
         </div>
 
       </div>
+      <StickyDemoCTA productName="Custom Business Solutions" />
     </div>
   );
 };

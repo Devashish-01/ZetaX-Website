@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Database, Search, Filter, Download, Lock, ArrowRight, Check, MapPin, Building2, FileDown, RefreshCw } from 'lucide-react';
+import StickyDemoCTA from '../../components/StickyDemoCTA';
 
 const features = [
   {
@@ -48,7 +49,7 @@ const plans = [
     per: '/mo',
     desc: 'For freelancers and solo reps.',
     features: ['500 lead exports/month', 'City & category filters', 'CSV export', 'Email support'],
-    cta: 'Get Started',
+    cta: 'Request Access',
     highlight: false,
   },
   {
@@ -57,7 +58,7 @@ const plans = [
     per: '/mo',
     desc: 'For growing sales teams.',
     features: ['5,000 lead exports/month', 'Advanced filters', 'CRM integrations', 'Priority WhatsApp support', 'Verified contacts only'],
-    cta: 'Start Free Trial',
+    cta: 'Book a Demo',
     highlight: true,
   },
   {
@@ -95,7 +96,7 @@ const ZetaxLeadGenerator: React.FC = () => {
                   to="/contact"
                   className="inline-flex items-center gap-2 bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-gray-800 transition-colors"
                 >
-                  Request a Demo <ArrowRight size={16} />
+                  Book a Demo <ArrowRight size={16} />
                 </Link>
                 <Link
                   to="/contact"
@@ -309,6 +310,7 @@ const ZetaxLeadGenerator: React.FC = () => {
         </div>
 
       </div>
+      <StickyDemoCTA productName="ZetaX Lead Generator" />
     </div>
   );
 };

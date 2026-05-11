@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Stethoscope, Calendar, FileText, CreditCard, Users, Bell, ShieldCheck, ArrowRight, Check, Activity } from 'lucide-react';
+import StickyDemoCTA from '../../components/StickyDemoCTA';
 
 const features = [
   {
@@ -53,7 +54,7 @@ const plans = [
     per: '/mo',
     desc: 'For single-doctor practices.',
     features: ['Up to 2 doctors', 'Patient records & scheduling', 'Digital prescriptions', 'WhatsApp reminders', 'Email support'],
-    cta: 'Get Started',
+    cta: 'Request Access',
     highlight: false,
   },
   {
@@ -62,7 +63,7 @@ const plans = [
     per: '/mo',
     desc: 'For multi-department facilities.',
     features: ['Unlimited doctors & staff', 'OPD + IPD + Pharmacy', 'Insurance claim automation', 'Lab integration', 'Priority support'],
-    cta: 'Start Free Trial',
+    cta: 'Book a Demo',
     highlight: true,
   },
   {
@@ -254,6 +255,7 @@ const DoctorManagement: React.FC = () => {
         </div>
 
       </div>
+      <StickyDemoCTA productName="Doctor Management System" />
     </div>
   );
 };

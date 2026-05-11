@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shirt, Camera, Sparkles, ShoppingBag, BarChart2, RefreshCw, ArrowRight, Check, Zap, Globe } from 'lucide-react';
+import StickyDemoCTA from '../../components/StickyDemoCTA';
 
 const features = [
   {
@@ -48,7 +49,7 @@ const plans = [
     per: '/mo',
     desc: 'For small boutiques.',
     features: ['Up to 200 SKUs', '500 try-ons/month', 'Shopify & WooCommerce', '1 domain', 'Email support'],
-    cta: 'Get Started',
+    cta: 'Request Access',
     highlight: false,
   },
   {
@@ -57,7 +58,7 @@ const plans = [
     per: '/mo',
     desc: 'For scaling e-commerce brands.',
     features: ['Unlimited SKUs', '5,000 try-ons/month', 'Mix & match outfits', 'Analytics dashboard', '3 domains', 'Priority WhatsApp support'],
-    cta: 'Start Free Trial',
+    cta: 'Book a Demo',
     highlight: true,
   },
   {
@@ -273,6 +274,7 @@ const VirtualTryon: React.FC = () => {
         </div>
 
       </div>
+      <StickyDemoCTA productName="Virtual Try-On" />
     </div>
   );
 };

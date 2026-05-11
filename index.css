@@ -12,6 +12,23 @@ body {
   color: #0f172a;
 }
 
+/* ─── Animation safety ───────────────────────────────────────────────────────
+   Elements using opacity-0 + animate-fade-in-up will stay invisible if the
+   animation never fires (e.g. slow load, prefers-reduced-motion). This rule
+   ensures they become visible after the CSS animation duration + a small buffer.
+   The keyframe itself takes 0.8s; the longest delay we use is 0.4s → 1.2s total.
+   We set a 1.5s fallback via animation-fill-mode: forwards (already set in the
+   keyframe) which keeps the end state. As a belt-and-suspenders measure, the
+   class below removes opacity-0 for users who prefer reduced motion.
+─────────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ─── Custom scrollbar ───────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;

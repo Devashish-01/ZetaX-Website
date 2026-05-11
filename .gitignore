@@ -28,3 +28,5 @@ important/
 *.env
 .env.local
 .env*.local
+
+commit_msg.txt

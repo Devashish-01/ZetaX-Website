@@ -14,8 +14,9 @@ const Footer: React.FC = () => {
               <span className="font-bold text-2xl text-white tracking-tight">Zetax.</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Empowering businesses with next-gen AI automation, custom web solutions, and verified lead generation data.
+              Multiplying human potential at infinite scale — one Indian business at a time.
             </p>
+            <p className="text-xs text-gray-600 font-bold tracking-widest uppercase mt-1">Z × ∞</p>
             <div className="flex space-x-3 pt-2">
               <a
                 href="https://wa.me/919589781311"
