@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Rocket, Bot, Zap, Database } from 'lucide-react';
+import { Menu, X, ChevronDown, Rocket, Bot, Zap, Database, Stethoscope, Briefcase, Shirt } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -28,9 +29,9 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Product', path: '/product/zetax-lead-generator' },
     { name: 'How We Work', path: '/how-we-work' },
     { name: 'Enterprise', path: '/enterprise' },
+    { name: 'About', path: '/about' },
     { name: 'Careers', path: '/careers' },
   ];
 
@@ -38,6 +39,13 @@ const Navbar: React.FC = () => {
     { name: 'Website Development', path: '/services/website-development', icon: Rocket },
     { name: 'AI Integration', path: '/services/ai-integration', icon: Bot },
     { name: 'Lead Automation', path: '/services/lead-automation', icon: Zap },
+  ];
+
+  const products = [
+    { name: 'Lead Generator', path: '/product/zetax-lead-generator', icon: Database },
+    { name: 'Doctor Management', path: '/product/doctor-management', icon: Stethoscope },
+    { name: 'Custom Business', path: '/product/custom-business', icon: Briefcase },
+    { name: 'Virtual Try-On', path: '/product/virtual-tryon', icon: Shirt },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -76,6 +84,35 @@ const Navbar: React.FC = () => {
                   >
                     <service.icon className="w-5 h-5 text-brand-900" />
                     {service.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Products Dropdown */}
+            <div className="relative group">
+              <button
+                className={`flex items-center gap-1 text-sm font-medium hover:text-brand-900 transition-colors ${location.pathname.includes('/product') ? 'text-brand-900' : 'text-gray-500'}`}
+                onMouseEnter={() => setIsProductsOpen(true)}
+              >
+                Products <ChevronDown size={14} />
+              </button>
+
+              <div className="absolute left-0 mt-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-2">
+                <Link
+                  to="/products"
+                  className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-brand-900 hover:bg-gray-50 rounded-md transition-colors border-b border-gray-50 mb-1"
+                >
+                  All Products →
+                </Link>
+                {products.map((product) => (
+                  <Link
+                    key={product.path}
+                    to={product.path}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-900 rounded-md transition-colors"
+                  >
+                    <product.icon className="w-5 h-5 text-brand-900" />
+                    {product.name}
                   </Link>
                 ))}
               </div>
@@ -134,6 +171,26 @@ const Navbar: React.FC = () => {
                   <service.icon size={18} />
                 </div>
                 {service.name}
+              </Link>
+            ))}
+            <div className="border-t border-gray-100 my-4"></div>
+            <div className="px-3 pt-2 pb-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Products</div>
+            <Link
+              to="/products"
+              className="block pl-3 pr-3 py-3 rounded-md text-base font-semibold text-brand-900 hover:bg-gray-50"
+            >
+              All Products
+            </Link>
+            {products.map((product) => (
+              <Link
+                key={product.path}
+                to={product.path}
+                className="block pl-3 pr-3 py-3 rounded-md text-base font-medium text-gray-600 hover:text-brand-900 hover:bg-gray-50 flex items-center gap-3"
+              >
+                <div className="p-1.5 bg-brand-900/5 rounded-md text-brand-900">
+                  <product.icon size={18} />
+                </div>
+                {product.name}
               </Link>
             ))}
             <div className="border-t border-gray-100 my-4"></div>

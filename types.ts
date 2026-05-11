@@ -8,22 +8,22 @@ export interface Service {
   link: string;
 }
 
-export interface Lead {
-  id: string;
-  businessName: string;
-  category: string;
-  phone: string;
-  website: string;
-  location: string;
-  verified: boolean;
-}
-
 export interface ContactFormData {
   name: string;
   email: string;
   company: string;
   requirement: string;
   message: string;
+}
+
+export interface CareerApplicationData {
+  fullName: string;
+  email: string;
+  phone: string;
+  role: string;
+  experience: string;
+  portfolioUrl: string;
+  whyZetax: string;
 }
 
 export interface ApiResponse<T> {

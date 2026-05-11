@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Cpu, Database, CheckCircle, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Code, Cpu, Database, CheckCircle, Zap, Shield, Stethoscope, Briefcase, Shirt, Star, Quote } from 'lucide-react';
 
 const Home: React.FC = () => {
   return (
@@ -39,6 +39,33 @@ const Home: React.FC = () => {
             <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-white text-brand-900 border border-gray-200 rounded-lg font-semibold hover:border-brand-900 hover:bg-gray-50 transition-all flex items-center justify-center">
               Talk to Us
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Bar */}
+      <section className="py-10 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
+            Trusted by businesses across India
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 sm:gap-x-14 opacity-70">
+            {[
+              'Healthcare',
+              'D2C Retail',
+              'Real Estate',
+              'EdTech',
+              'Manufacturing',
+              'Fashion',
+              'Hospitality',
+            ].map((sector) => (
+              <span
+                key={sector}
+                className="text-sm sm:text-base font-bold text-gray-500 tracking-tight"
+              >
+                {sector}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -96,57 +123,110 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Product Highlight */}
+      {/* Products Showcase */}
       <section className="py-24 bg-brand-900 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-brand-accent/20 text-brand-accent text-sm font-semibold mb-6">
-                Featured Product
-              </div>
-              <h2 className="text-4xl font-bold mb-6">ZetaX Lead Generator</h2>
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Access a real-time database of verified business leads. Filter by location, industry, and size to find your next customer instantly.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="text-brand-accent" size={20} />
-                  <span>100% Verified Phone Numbers</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="text-brand-accent" size={20} />
-                  <span>Category & Location Filtering</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="text-brand-accent" size={20} />
-                  <span>One-Click CRM Export</span>
-                </li>
-              </ul>
-              <Link to="/product/zetax-lead-generator" className="inline-flex items-center px-6 py-3 bg-brand-accent text-brand-900 rounded-lg font-bold hover:bg-white transition-colors">
-                Try Lead Generator <Database className="ml-2" size={18} />
-              </Link>
+          <div className="text-center mb-14">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-accent/20 text-brand-accent text-sm font-semibold mb-6">
+              Our Products
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm relative shadow-2xl">
-              {/* Abstract UI representation */}
-              <div className="space-y-4">
-                <div className="h-8 bg-white/10 rounded w-1/3 mb-6"></div>
-                <div className="space-y-2">
-                    {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="flex items-center justify-between p-3 bg-white/5 rounded hover:bg-white/10 transition-colors cursor-pointer">
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 bg-brand-accent/20 rounded-full"></div>
-                                <div className="space-y-1">
-                                    <div className="h-2 w-24 bg-white/20 rounded"></div>
-                                    <div className="h-2 w-16 bg-white/10 rounded"></div>
-                                </div>
-                            </div>
-                            <div className="h-6 w-16 bg-brand-accent/20 rounded-full"></div>
-                        </div>
-                    ))}
+            <h2 className="text-4xl font-bold mb-4">Ready-to-use products built in India</h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Four powerful SaaS products solving real business problems — lead generation, healthcare, fashion, and custom workflows.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Database, name: 'Lead Generator', desc: 'Verified B2B database with city & category filters.', path: '/product/zetax-lead-generator', tag: 'Sales' },
+              { icon: Stethoscope, name: 'Doctor Management', desc: 'Complete clinic & hospital management system.', path: '/product/doctor-management', tag: 'Healthcare' },
+              { icon: Briefcase, name: 'Custom Business', desc: 'Bespoke ERP, CRM & automation built for you.', path: '/product/custom-business', tag: 'Enterprise' },
+              { icon: Shirt, name: 'Virtual Try-On', desc: 'AI clothing fit for e-commerce stores.', path: '/product/virtual-tryon', tag: 'AI' },
+            ].map((product) => (
+              <Link
+                key={product.name}
+                to={product.path}
+                className="group bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-brand-accent/40 transition-all backdrop-blur-sm flex flex-col"
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div className="bg-brand-accent/20 p-3 rounded-xl group-hover:bg-brand-accent group-hover:text-brand-900 transition-colors">
+                    <product.icon size={22} className="text-brand-accent group-hover:text-brand-900" />
+                  </div>
+                  <span className="text-[10px] font-bold bg-white/10 px-2 py-1 rounded-full text-white/70 uppercase tracking-wider">{product.tag}</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2">{product.name}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed mb-5 flex-grow">{product.desc}</p>
+                <div className="flex items-center gap-1 text-brand-accent text-sm font-semibold group-hover:gap-2 transition-all">
+                  Explore <ArrowRight size={14} />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/products" className="inline-flex items-center px-6 py-3 bg-brand-accent text-brand-900 rounded-lg font-bold hover:bg-white transition-colors">
+              View All Products <ArrowRight className="ml-2" size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-brand-accent/20 text-brand-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+              Customer Stories
+            </span>
+            <h2 className="text-3xl font-bold text-brand-900 mb-3">What our customers say</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Real feedback from Indian businesses using ZetaX products and custom solutions.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "ZetaX rebuilt our clinic management from scratch in 5 weeks. Patient bookings went up 40% just from the WhatsApp reminders alone.",
+                name: 'Dr. R. Sharma',
+                role: 'Owner, Multi-Speciality Clinic',
+                city: 'Indore',
+                rating: 5,
+              },
+              {
+                quote: "We tried 3 lead-data providers before ZetaX. This is the only one with accurate Indian phone numbers and clean exports straight to our CRM.",
+                name: 'A. Verma',
+                role: 'Founder, B2B Agency',
+                city: 'Mumbai',
+                rating: 5,
+              },
+              {
+                quote: "Their custom inventory dashboard saved my team 15+ hours every week. The dedicated team model gave us senior devs without the senior overhead.",
+                name: 'N. Patel',
+                role: 'COO, D2C Fashion Brand',
+                city: 'Ahmedabad',
+                rating: 5,
+              },
+            ].map((t) => (
+              <div
+                key={t.name}
+                className="bg-white border border-gray-100 rounded-2xl p-7 hover:shadow-xl transition-shadow relative"
+              >
+                <Quote className="absolute top-5 right-5 text-brand-accent/20" size={36} />
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} size={15} className="text-amber-400 fill-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6 text-sm">"{t.quote}"</p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-bold text-brand-900 text-sm">{t.name}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{t.role} · {t.city}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -178,10 +258,13 @@ const Home: React.FC = () => {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold text-brand-900 mb-6">Ready to transform your business?</h2>
-          <p className="text-gray-600 mb-8 text-lg">Join 500+ companies using ZetaX to automate operations and drive revenue.</p>
-          <div className="flex justify-center gap-4">
+          <p className="text-gray-600 mb-8 text-lg">Indian businesses across healthcare, retail, and SaaS trust ZetaX to automate operations and drive revenue.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/contact" className="px-8 py-3 bg-brand-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg">
               Start Your Project
+            </Link>
+            <Link to="/products" className="px-8 py-3 bg-white text-brand-900 border border-gray-200 rounded-lg font-semibold hover:border-brand-900 transition-colors">
+              Browse Products
             </Link>
           </div>
         </div>
